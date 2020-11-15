@@ -4,12 +4,12 @@
 <img src="program2.PNG">
 
 # DESCRIPTION
-The program takes an integer input, the input is a dollar amount. 
-The program then converts the dollar amount.
-
+The user can either save a car. 
+- Buy a car
+- Sell a car
+- Quit Game
 # PROGRAM USED
-python
-
+Java
 
 
 
