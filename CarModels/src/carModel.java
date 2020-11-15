@@ -7,10 +7,10 @@ import java.io.IOException;
 
 public class carModel {
     public static ArrayList<String> read() {
-        ArrayList<String> data = new ArrayList<String>();
+        ArrayList<String> data = new ArrayList<>();
         try {
-            File myfile = new File("carFile.txt");
-            Scanner reader = new Scanner(myfile);
+            File file = new File("carFile.txt");
+            Scanner reader = new Scanner(file);
             while (reader.hasNextLine()) {
                 data.add(reader.nextLine());
             }
@@ -32,32 +32,28 @@ public class carModel {
             myWrite.close();
             System.out.println("Successfully wrote the file");
         } catch (IOException e) {
-            System.out.println("Error occured");
+            System.out.println("Error occurred");
             e.printStackTrace();
         }
-    }
-    public static String carName() {
-        Scanner ob = new Scanner(System.in);
-        String name = ob.next();
-        return name;
     }
     public static void main(String[] args) {
         boolean done = false;
         String car;
-        ArrayList<String> cars = new ArrayList<String>();
+        ArrayList<String> cars;
         cars = read();
 
         while (!done) {
             Scanner in = new Scanner(System.in);
             System.out.println(
-                            "1. Buy a Car   \n"       +
-                            "2. Sell a Car  \n"       +
-                            "3. Check Car(s)\n"       +
-                            "4. Save Car(s) \n"       +
-                            "5. Quit"
+                    """
+                            1. Buy a Car   \s
+                            2. Sell a Car  \s
+                            3. Check Car(s)\s
+                            4. Save Car(s) \s
+                            5. Quit"""
             );
 
-            Integer choice = in.nextInt();
+            int choice = in.nextInt();
             if (choice == 1) {
                 // buy a car
                 System.out.println("Please enter a car type: ");
